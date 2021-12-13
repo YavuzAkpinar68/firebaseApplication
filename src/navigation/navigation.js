@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 
 import LogIn from "../pages/logIn/logIn"
-import SingIn from "../pages/singIn/singIn"
+import SingUp from "../pages/singIn/singUp"
 
 const Stack = createNativeStackNavigator()
 
@@ -12,7 +12,7 @@ const Navigation = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="LogIn" component={LogIn}/>
-        <Stack.Screen name="SingIn" component={SingIn}/>
+        <Stack.Screen name="SingUp" component={SingUp}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
