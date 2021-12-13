@@ -1,6 +1,8 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
-import { SafeAreaView } from "react-native";
+import { Alert, SafeAreaView } from "react-native";
+import auth from '@react-native-firebase/auth';
+
 import Button from "../../components/Button/button";
 import Input from "../../components/Input/input";
 
@@ -13,6 +15,12 @@ const LogIn = () => {
   }
 
   const handleLogIn = () => {
+    try {
+      auth().signInWithEmailAndPassword(data.email, data.password)
+      Alert.alert("Giriş yaptınız")
+    } catch (error) {
+      console.log("alert")
+    }
     console.log(data)
   }
 
