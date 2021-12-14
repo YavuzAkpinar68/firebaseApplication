@@ -13,11 +13,16 @@ const LogIn = () => {
   const handleNavigationSingUp = () => {
     navigation.navigate("SingUp")
   }
+  
 
   const handleLogIn = () => {
     try {
-      auth().signInWithEmailAndPassword(data.email, data.password)
-      Alert.alert("Giriş yaptınız")
+      if(data.email &&  data.password) {
+        auth().signInWithEmailAndPassword(data.email, data.password)
+        Alert.alert("Giriş yaptınız")
+      }else {
+        Alert.alert("olmadı")
+      } 
     } catch (error) {
       console.log("alert")
     }
