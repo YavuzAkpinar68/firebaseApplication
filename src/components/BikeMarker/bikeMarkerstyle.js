@@ -1,12 +1,13 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-  marker:{
-
-  },
-  title:{
-
-  }
+    container:{
+      backgroundColor:"white",
+      padding:5,
+      borderRadius:50,
+      borderWidth:1
+    }
 })
+
 
 export default styles

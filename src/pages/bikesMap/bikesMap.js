@@ -5,6 +5,8 @@ import database from '@react-native-firebase/database';
 
 import Button from "../../components/Button/button";
 import MapView, { Marker } from "react-native-maps";
+import  Icon  from "react-native-vector-icons/EvilIcons";
+import BikeMarker from "../../components/BikeMarker/bikeMarker";
 
 const BikesMap = () => {
   const [bikes, setBikes] = useState([])
@@ -31,14 +33,11 @@ const BikesMap = () => {
   return(
     <MapView style={{flex:1}}>
       {bikes.map(b => 
-        <Marker 
+        <BikeMarker 
         key={b.id}
-        coordinate={{
-          latitude:b.latitude,
-          longitude:b.longitude
-        }}/>
+        data={b}/>
       )}
-   
+     
     </MapView>
     
       
